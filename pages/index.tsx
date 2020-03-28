@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 
 import { getHotels } from '../store/hotels/actions';
 import { WithReduxNextPageContext } from '../interfaces';
+import SidebarLayout from '../components/SidebarLayout/SidebarLayout';
 
 const Index: NextPage = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,11 @@ const Index: NextPage = () => {
     // dispatch(startClock());
   });
 
-  return <h1>testing</h1>;
+  return (
+    <SidebarLayout>
+      <h1>Home screen test</h1>
+    </SidebarLayout>
+  );
 };
 
 Index.getInitialProps = async ({

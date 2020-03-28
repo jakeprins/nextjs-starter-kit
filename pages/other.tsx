@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { NextPage } from 'next';
+import { Button } from 'antd';
 
 import { WithReduxNextPageContext } from '../interfaces';
+import SideBarLayout from '../components/SidebarLayout/SidebarLayout';
 
 const Other: NextPage = () => {
   const dispatch = useDispatch();
@@ -10,7 +12,14 @@ const Other: NextPage = () => {
   useEffect(() => {
     // dispatch(startClock());
   });
-  return <h1>Other page</h1>;
+
+  return (
+    <SideBarLayout>
+      <Button size="large" style={{ marginLeft: 8 }}>
+        Dit is een button
+      </Button>
+    </SideBarLayout>
+  );
 };
 
 Other.getInitialProps = async ({
