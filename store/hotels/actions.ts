@@ -1,4 +1,4 @@
-import * as actionIs from './actions.interfaces';
+import * as actionIs from './interfaces';
 
 export enum actionTypes {
   GET_HOTELS = 'GET_HOTELS',
@@ -12,10 +12,10 @@ export function getHotels(): actionIs.GetHotels {
   return { type: actionTypes.GET_HOTELS };
 }
 
-export function getHotelsSuccess(data: { name: string }[]): actionIs.GetHotelsSuccess {
+export function getHotelsSuccess(entities: any): actionIs.GetHotelsSuccess {
   return {
     type: actionTypes.GET_HOTELS_SUCCESS,
-    data,
+    entities,
   };
 }
 

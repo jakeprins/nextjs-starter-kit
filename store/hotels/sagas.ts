@@ -6,9 +6,9 @@ import { SagaIterator } from 'redux-saga';
 
 function* getHotelsSaga(): SagaIterator {
   try {
-    const res = yield call(fetch, 'https://jsonplaceholder.typicode.com/users');
-    const data = yield res.json();
-    yield put(getHotelsSuccess(data));
+    const res = yield call(fetch, 'https://k8s.vandervalkonline.com/hotelservice/v1/hotels');
+    const response = yield res.json();
+    yield put(getHotelsSuccess(response.data));
   } catch (err) {
     yield put(getHotelsFail(err));
   }

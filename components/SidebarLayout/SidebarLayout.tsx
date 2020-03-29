@@ -14,7 +14,7 @@ const SidebarLayout: React.FunctionComponent = props => {
     <Layout>
       <Header>
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
           <Menu.Item key="1">
             <Link href="/" as="/">
               <a>Home</a>

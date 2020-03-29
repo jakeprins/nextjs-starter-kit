@@ -1,5 +1,12 @@
 import { actionTypes, Action } from './actions';
-import { State } from '../../interfaces';
+import { HotelInterface } from './interfaces';
+
+export interface HotelStateInterface {
+  entities: HotelInterface[];
+  isLoading: boolean;
+  isLoaded: boolean;
+  error: string;
+}
 
 export const initialState: any = {
   entities: [],
@@ -8,7 +15,7 @@ export const initialState: any = {
   error: null,
 };
 
-const reducer = (state = initialState, action: Action): State => {
+const reducer = (state = initialState, action: Action): HotelStateInterface => {
   switch (action.type) {
     case actionTypes.GET_HOTELS:
       return {
@@ -19,7 +26,7 @@ const reducer = (state = initialState, action: Action): State => {
     case actionTypes.GET_HOTELS_SUCCESS:
       return {
         ...state,
-        entities: action.data,
+        entities: action.entities,
         isLoading: false,
       };
 
